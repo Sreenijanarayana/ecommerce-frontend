@@ -40,7 +40,7 @@ const Footer = () => {
                     <Typography variant="body2" component="p" className='pb-1'>
                         Made with love by Sreenija Narayana.
                     </Typography>
-                    <Typography variant="body2" component="p">
+                    {/* <Typography variant="body2" component="p">
                         Icons made by{' '}
                         <Link href="https://www.freepik.com" color="inherit" underline="always">
                             Freepik
@@ -49,7 +49,7 @@ const Footer = () => {
                         <Link href="https://www.flaticon.com/" color="inherit" underline="always">
                             www.flaticon.com
                         </Link>
-                    </Typography>
+                    </Typography> */}
                 </Grid>
             </Grid>
         </div>

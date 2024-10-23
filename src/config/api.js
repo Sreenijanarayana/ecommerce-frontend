@@ -1,7 +1,8 @@
 
 import axios from 'axios';
 
-const LOCALHOST='http://localhost:5454'
+const LOCALHOST='https://ecommerce-backend-production-2133.up.railway.app'
+//'http://localhost:5454'
 
 export const API_BASE_URL = LOCALHOST
 

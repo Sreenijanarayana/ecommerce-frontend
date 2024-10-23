@@ -34,10 +34,11 @@ const Footer = () => {
                 {/* Centered Grid Item */}
                 <Grid item xs={12} sx={{ textAlign: 'center', pt: 5 }}>
                     <Typography variant="body2" component="p" className='pb-1'>
-                        &copy; 2024 My Company. All rights reserved.
+                        &copy; 2024 
+                      . All rights reserved.
                     </Typography>
                     <Typography variant="body2" component="p" className='pb-1'>
-                        Made with love by Me.
+                        Made with love by Sreenija Narayana.
                     </Typography>
                     <Typography variant="body2" component="p">
                         Icons made by{' '}

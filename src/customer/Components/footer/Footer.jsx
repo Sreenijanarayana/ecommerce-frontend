@@ -2,13 +2,14 @@ import React from 'react';
 import { Grid } from '@mui/material'; // Ensure you import Grid correctly
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link'; // Correct import for MUI Link
-
+//import Link from '@mui/material/Link'; // Correct import for MUI Link
+import { Link } from 'react-router-dom';
 const footerLinks = [
-    { title: 'Company', links: ['About', 'Blog', 'Press', 'Jobs', 'Partners'] },
-    { title: 'Services', links: ['Consulting', 'Support', 'Training', 'Sales', 'Marketing'] },
-    { title: 'Resources', links: ['Documentation', 'API Reference', 'Community', 'Tutorials', 'FAQs'] },
+    { title: 'Company', links: ['About', 'Privacy policy', 'Return policy', 'Terms & Conditions'] },
     { title: 'Contact', links: ['Email', 'Phone', 'Social Media', 'Locations'] },
+    { title: 'Services', links: ['Consulting', 'Support', 'Sales', 'Marketing'] },
+    { title: 'Resources', links: ['Documentation',  'Community', 'Tutorials', 'FAQs'] },
+   
 ];
 
 const Footer = () => {
@@ -24,9 +25,38 @@ const Footer = () => {
                     <Grid item xs={12} sm={6} md={3} key={index}>
                         <Typography className='pb-2' variant='h6'>{section.title}</Typography>
                         {section.links.map((link, linkIndex) => (
+                            // <div key={linkIndex}>
+                            //     <Button className='pb-1' variant='text'>{link}</Button>
+                            // </div>
                             <div key={linkIndex}>
+                            {link === 'About' ? (
+                                <Button className='pb-1' variant='text' component={Link} to="/about">
+                                    {link}
+                                </Button>
+                            ):link === 'Privacy policy' ? (
+                              <Button className='pb-1' variant='text' component={Link} to="/privacy-policy">
+                                  {link}
+                              </Button>
+                          )
+                          :link === 'Return policy' ? (
+                            <Button className='pb-1' variant='text' component={Link} to="/return-policy">
+                                {link}
+                            </Button>
+                        ):link === 'Terms & Conditions' ? (
+                          <Button className='pb-1' variant='text' component={Link} to="/terms-condition">
+                              {link}
+                          </Button>
+                      )
+                      :link === 'Email' || link === 'Phone' || link === 'Social Media' || link === 'Locations' ? (
+                        <Button className='pb-1' variant='text' component={Link} to="/contact">
+                            {link}
+                        </Button>
+                    ):
+
+                             (
                                 <Button className='pb-1' variant='text'>{link}</Button>
-                            </div>
+                            )}
+                        </div>
                         ))}
                     </Grid>
                 ))}

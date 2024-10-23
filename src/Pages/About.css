@@ -1,0 +1,38 @@
+/* About.css */
+
+/* Container styles for both About and Privacy Policy pages */
+.about-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%; /* Full width */
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.text {
+  font-size: 1.1 rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* List styling */
+ul {
+  margin-left: 20px;
+}
+
+ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+strong {
+    font-weight: bold;
+  }

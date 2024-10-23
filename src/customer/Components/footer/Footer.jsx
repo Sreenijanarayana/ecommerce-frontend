@@ -38,7 +38,7 @@ const Footer = () => {
                       . All rights reserved.
                     </Typography>
                     <Typography variant="body2" component="p" className='pb-1'>
-                        Made with love by Sreenija Narayana.
+                        Made with love by Sreenija Narayana😊
                     </Typography>
                     {/* <Typography variant="body2" component="p">
                         Icons made by{' '}

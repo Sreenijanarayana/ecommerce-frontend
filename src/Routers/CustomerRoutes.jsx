@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import ProductDetails from "../customer/Components/Product/ProductDetails/ProductDetails";
 import Product from "../customer/Components/Product/Product/Product";
 import Contact from "../Pages/Contact";
-import TearmsCondition from "../Pages/TearmsCondition";
+import TermsCondition from "../Pages/TermsCondition";
 import PrivacyPolicy from "../Pages/PrivacyPolicy";
 import About from "../Pages/About";
 import Homepage from "../Pages/Homepage";
@@ -19,6 +19,7 @@ import Footer from "../customer/Components/footer/Footer";
 import PaymentSuccess from "../customer/Components/paymentSuccess/PaymentSuccess";
 import RateProduct from "../customer/Components/ReviewProduct/RateProduct";
 import SearchProduct from "../customer/Components/Product/Product/SearchProduct";
+import ReturnPolicy from "../Pages/ReturnPolicy";
 
 const CustomerRoutes = () => {
     const location = useLocation();
@@ -42,7 +43,8 @@ const CustomerRoutes = () => {
         <Route path="/home" element={<Homepage />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
-        <Route path="/terms-condition" element={<TearmsCondition />}></Route>
+        <Route path="/return-policy" element={<ReturnPolicy />}></Route>
+        <Route path="/terms-condition" element={<TermsCondition />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/:lavelOne/:lavelTwo/:lavelThree" element={<Product />}></Route>
         <Route path="/product/:productId" element={<ProductDetails />}></Route>

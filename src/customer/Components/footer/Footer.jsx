@@ -5,10 +5,10 @@ import Button from '@mui/material/Button';
 //import Link from '@mui/material/Link'; // Correct import for MUI Link
 import { Link } from 'react-router-dom';
 const footerLinks = [
-    { title: 'Company', links: ['About', 'Privacy policy', 'Return policy', 'Terms & Conditions'] },
-    { title: 'Contact', links: ['Email', 'Phone', 'Social Media', 'Locations'] },
-    { title: 'Services', links: ['Consulting', 'Support', 'Sales', 'Marketing'] },
-    { title: 'Resources', links: ['Documentation',  'Community', 'Tutorials', 'FAQs'] },
+    { title: 'Company', links: ['About us','Contact us','Privacy policy', 'Terms & Conditions','Refund&Cancellaion','Shipping&Delivery'] },
+    // { title: 'Contact', links: ['Email', 'Phone', 'Social Media', 'Locations'] },
+    // { title: 'Services', links: ['Consulting', 'Support', 'Sales', 'Marketing'] },
+    // { title: 'Resources', links: ['Documentation',  'Community', 'Tutorials', 'FAQs'] },
    
 ];
 
@@ -18,7 +18,7 @@ const Footer = () => {
             <Grid
                 container
                 spacing={2} // Adjust this spacing to control the space between items
-                justifyContent="center" // Center items horizontally
+                //justifyContent="center" // Center items horizontally
                 sx={{ py: 3 }} // Padding on Y-axis
             >
                 {footerLinks.map((section, index) => (
@@ -29,7 +29,7 @@ const Footer = () => {
                             //     <Button className='pb-1' variant='text'>{link}</Button>
                             // </div>
                             <div key={linkIndex}>
-                            {link === 'About' ? (
+                            {link === 'About us' ? (
                                 <Button className='pb-1' variant='text' component={Link} to="/about">
                                     {link}
                                 </Button>
@@ -46,16 +46,29 @@ const Footer = () => {
                           <Button className='pb-1' variant='text' component={Link} to="/terms-condition">
                               {link}
                           </Button>
-                      )
-                      :link === 'Email' || link === 'Phone' || link === 'Social Media' || link === 'Locations' ? (
-                        <Button className='pb-1' variant='text' component={Link} to="/contact">
+                      ):link === 'Refund&Cancellaion' ? (
+                        <Button className='pb-1' variant='text' component={Link} to="/refund-policy">
                             {link}
                         </Button>
-                    ):
+                      ):link === 'Shipping&Delivery' ? (
+                        <Button className='pb-1' variant='text' component={Link} to="/shipping-policy">
+                            {link}
+                        </Button>
+                      ):
+                       <Button className='pb-1' variant='text' component={Link} to="/contact">
+                               {link}
+                           </Button>
 
-                             (
-                                <Button className='pb-1' variant='text'>{link}</Button>
-                            )}
+                    //   :link === 'Email' || link === 'Phone' || link === 'Social Media' || link === 'Locations' ? (
+                    //     <Button className='pb-1' variant='text' component={Link} to="/contact">
+                    //         {link}
+                    //     </Button>
+                    // ):
+
+                    //          (
+                    //             <Button className='pb-1' variant='text'>{link}</Button>
+                    //         )
+                    }
                         </div>
                         ))}
                     </Grid>

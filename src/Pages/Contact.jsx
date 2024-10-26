@@ -1,5 +1,5 @@
 import React from 'react';
-import './About.css';  // Reuse the existing CSS
+import './About.css';
 
 const Contact = () => {
   return (
@@ -7,35 +7,29 @@ const Contact = () => {
       <h2 className="title">Contact Us</h2>
       
       <p className="text">
-        We are always here to help you with any questions, concerns, or feedback you may have. Please feel free to reach out to us using the information provided below.
+        We are always here to help with any questions, concerns, or feedback you may have. Please reach out to us using the information below.
       </p>
-      <br />
+      <br/>
       <h3 className="title">Office Address</h3>
       <p className="text">
-        Shop Fashion Inc.<br />
-        123 Fashion Street<br />
-        New Delhi, India 110001<br />
+        Nr Pet<br />
+        Gudur, Andhra Pradesh, India - 524101<br />
       </p>
-      <br />
+      <br/>
       <h3 className="title">Customer Support</h3>
       <p className="text">
-        Email: support@shopfashion.com<br />
-        Phone: +91 12345 67890<br />
-        Working Hours: Monday to Friday, 9:00 AM - 6:00 PM
+        Email: <a href="mailto:shopfashion9999@gmail.com">shopfashion9999@gmail.com</a><br />
+        Phone: <a href="tel:+919966874025">+91 9966874025</a><br />
       </p>
-      <br />
-      <h3 className="title">Follow Us</h3>
-      <p className="text">
-        Stay connected with us on social media:<br />
-        Facebook: <a href="https://www.facebook.com/shopfashion" target="_blank" rel="noopener noreferrer">facebook.com/shopfashion</a><br />
-        Instagram: <a href="https://www.instagram.com/shopfashion" target="_blank" rel="noopener noreferrer">@shopfashion</a><br />
-        Twitter: <a href="https://www.twitter.com/shopfashion" target="_blank" rel="noopener noreferrer">@shopfashion</a>
-      </p>
-      <br />
+
+      <br/>
+
       <h3 className="title">Business Inquiries</h3>
       <p className="text">
-        For partnership or business-related inquiries, please email us at <strong>business@shopfashion.com</strong>.
+        For partnerships or business inquiries, please email us at <strong><a href="mailto:shopfashion9999@gmail.com">shopfashion9999@gmail.com</a></strong>.
       </p>
+
+     
     </div>
   );
 };

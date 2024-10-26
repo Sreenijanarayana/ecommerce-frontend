@@ -19,7 +19,9 @@ import Footer from "../customer/Components/footer/Footer";
 import PaymentSuccess from "../customer/Components/paymentSuccess/PaymentSuccess";
 import RateProduct from "../customer/Components/ReviewProduct/RateProduct";
 import SearchProduct from "../customer/Components/Product/Product/SearchProduct";
-import ReturnPolicy from "../Pages/ReturnPolicy";
+import RefundCancellationPolicy from "../Pages/RefundCancellationPolicy";
+import ShippingDeliveryPolicy from "../Pages/ShippingDeliveryPolicy";
+
 
 const CustomerRoutes = () => {
     const location = useLocation();
@@ -43,7 +45,8 @@ const CustomerRoutes = () => {
         <Route path="/home" element={<Homepage />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
-        <Route path="/return-policy" element={<ReturnPolicy />}></Route>
+        <Route path="/refund-policy" element={<RefundCancellationPolicy />}></Route>
+        <Route path="/shipping-policy" element={<ShippingDeliveryPolicy />}></Route>
         <Route path="/terms-condition" element={<TermsCondition />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/:lavelOne/:lavelTwo/:lavelThree" element={<Product />}></Route>

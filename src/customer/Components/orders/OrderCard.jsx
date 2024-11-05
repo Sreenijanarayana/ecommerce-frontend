@@ -8,6 +8,24 @@ import StarIcon from "@mui/icons-material/Star";
 const OrderCard = ({ item, order }) => {
   const navigate = useNavigate();
   console.log("items ", item,order,order.orderStatus);
+
+    // Helper function to calculate and format estimated delivery date
+    const getEstimatedDeliveryDate = (orderDate, deliveryDays = 7) => {
+      const order = new Date(orderDate);
+      const estimatedDelivery = new Date(order);
+      estimatedDelivery.setDate(order.getDate() + deliveryDays);
+      return estimatedDelivery.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+      }); // e.g., "Mar 03"
+    };
+
+    // Calculate the estimated delivery date or display the actual delivery date if available
+    const deliveryDate = order?.orderStatus === "DELIVERED" 
+    ? new Date(order.orderDate).toLocaleDateString("en-US", { month: "short", day: "numeric" })
+    : getEstimatedDeliveryDate(order.orderDate);
+
+
   return (
     <Box className="p-5 shadow-lg hover:shadow-2xl border ">
       <Grid spacing={2} container sx={{ justifyContent: "space-between" }}>
@@ -31,7 +49,7 @@ const OrderCard = ({ item, order }) => {
         </Grid>
 
         <Grid item xs={2}>
-          <p>₹{item?.price}</p>
+          <p>₹{item?.discountedPrice}</p>
         </Grid>
         <Grid item xs={4}>
           <p className="space-y-2 font-semibold">
@@ -41,7 +59,7 @@ const OrderCard = ({ item, order }) => {
                   sx={{ width: "15px", height: "15px" }}
                   className="text-green-600 p-0 mr-2 text-sm"
                 />
-                <span>Delivered On Mar 03</span>
+                <span>Delivered On {deliveryDate}</span>
 
             </>
             ):  <>
@@ -50,20 +68,12 @@ const OrderCard = ({ item, order }) => {
                 sx={{ width: "15px", height: "15px" }}
                 className="text-green-600 p-0 mr-2 text-sm"
               />
-              <span>Expected Delivery On Mar 03</span>
+              <span>Expected Delivery On {deliveryDate}</span>
               </>}
             
           </p>
-          <p className="text-xs">Your Item Has Been Delivered</p>
-          {item.orderStatus === "DELIVERED" && (
-            <div
-              onClick={() => navigate(`/account/rate/{id}`)}
-              className="flex items-center text-blue-600 cursor-pointer"
-            >
-              <StarIcon sx={{ fontSize: "2rem" }} className="px-2 text-5xl" />
-              <span>Rate & Review Product</span>
-            </div>
-          )}
+          {/* <p className="text-xs">Your Item Has Been Delivered</p> */}
+       
         </Grid>
       </Grid>
     </Box>

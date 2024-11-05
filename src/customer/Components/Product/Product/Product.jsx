@@ -103,7 +103,8 @@ export default function Product() {
     const searchParams = new URLSearchParams(location.search);
 
     let filterValues = searchParams.getAll(sectionId);
-
+    //checking if the value of the category is already selected in the  previous filter 
+    //if yes then we deselct it and scheck if that category is having any more values , if not we remove that category
     if (filterValues.length > 0 && filterValues[0].split(",").includes(value)) {
       filterValues = filterValues[0]
         .split(",")
@@ -112,7 +113,9 @@ export default function Product() {
         searchParams.delete(sectionId);
       }
       console.log("includes");
-    } else {
+    
+    } //if not we add that value to the section
+    else {
       // Remove all values for the current section
       // searchParams.delete(sectionId);
       filterValues.push(value);
@@ -120,7 +123,6 @@ export default function Product() {
 
     if (filterValues.length > 0)
       searchParams.set(sectionId, filterValues.join(","));
-
     // history.push({ search: searchParams.toString() });
     const query = searchParams.toString();
     navigate({ search: `?${query}` });

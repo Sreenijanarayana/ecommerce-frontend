@@ -33,19 +33,19 @@ const Achivement = () => {
   
        <Card sx={{ position: 'relative' }}>
       <CardContent>
-      <Typography variant='h6' sx={{ letterSpacing: '0.25px' }}>
-          Shop With Zosh
+      <Typography variant='h4' sx={{ letterSpacing: '0.35px',  color: 'primary.main'  }}>
+          Shop Fashion
         </Typography>
-        <Typography variant='body2' >Congratulations 🥳</Typography>
+        <Typography variant='body2' >Congratulations🎉</Typography>
         
         <Typography variant='h5' sx={{ my: 3.1, color: 'primary.main' }}>
-          420.8k
+          360.9k
         </Typography>
         <Button size='small' variant='contained'>
           View Sales
         </Button>
         <TriangleImg alt='triangle background' src={`/images/misc/${imageSrc}`} />
-        <TrophyImg alt='trophy' src='/images/misc/trophy.png' />
+        <TrophyImg alt='trophy' src='https://pngimg.com/uploads/award/award_PNG62.png'  style={{ height: '130px', width: '100px' }} />
       </CardContent>
     </Card>
    

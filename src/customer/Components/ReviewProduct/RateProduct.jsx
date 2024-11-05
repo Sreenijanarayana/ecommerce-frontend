@@ -42,7 +42,7 @@ const RateProduct = () => {
     console.log(formData);
     // You can customize this handler to handle the form data as needed
 
-    dispatch(createReview({review:formData.title,productId}))
+    dispatch(createReview({review:formData.description,productId}))
     setFormData({title:"",description:""})
     navigate(`/product/${productId}`)
 
@@ -74,7 +74,7 @@ const RateProduct = () => {
             <p className="opacity-50 font-semibold">
               {customersProduct.product?.brand}
             </p>
-            <p>₹{customersProduct.product?.price}</p>
+            <p>₹{customersProduct.product?.discountedPrice}</p>
             <p>Size: Free</p>
            {customersProduct.product?.color && <p>Color: {customersProduct.product?.color}</p>}
             <div className="flex items-center space-x-3">
@@ -97,6 +97,7 @@ const RateProduct = () => {
             </div>
           </div>
         </Grid>
+        
         <Grid item xs={12} lg={6}>
           <div className={`${!isLargeScreen ? "py-10" : ""} space-y-5`}>
             <div className="shadow-md border rounded-md p-5">

@@ -21,6 +21,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+
 export default function Navigation() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -42,6 +43,7 @@ export default function Navigation() {
   const handleUserClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleCloseUserMenu = (event) => {
     setAnchorEl(null);
   };
@@ -257,14 +259,14 @@ export default function Navigation() {
             <div className="flex h-16 items-center px-11">
             {/* hidden button hamburger icon with categories */}
              {/* Mobile menu toggle (hamburger icon) */}
-              <button
+              {/* <button
                 type="button"
                 className="rounded-md bg-white p-2 text-gray-400 lg:hidden"
                 onClick={() => setOpen(true)}
               >
                 <span className="sr-only">Open menu</span>
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-              </button>
+              </button> */}
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
@@ -365,6 +367,7 @@ export default function Navigation() {
                                             aria-labelledby={`${section.name}-heading`}
                                             className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
                                           >
+                                          {/* redirect */}
                                             {section.items.map((item) => (
                                               <li
                                                 key={item.name}

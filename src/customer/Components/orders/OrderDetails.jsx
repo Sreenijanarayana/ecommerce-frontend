@@ -83,15 +83,31 @@ const OrderDetails = () => {
                 <div className="ml-5 space-y-2">
                   <p className="">{item.product.title}</p>
                   <p className="opacity-50 text-xs font-semibold space-x-5">
-                    <span>Color: pink</span> <span>Size: {item.size}</span>
+                    <span>Color: {item.product.color}</span> <span>Size: {item.size}</span>
                   </p>
                   <p>Seller: {item.product.brand}</p>
-                  <p>₹{item.price} </p>
+                  <p>₹{item.discountedPrice} </p>
                 </div>
               </div>
             </Grid>
             <Grid item>
-              {
+              { order.order?.orderStatus==="DELIVERED" &&
+                <Box
+                  sx={{ color: deepPurple[500] }}
+                  onClick={() => navigate(`/account/rate/${item.product.id}`)}
+                  className="flex items-center cursor-pointer"
+                >
+        
+                  <StarIcon
+                    sx={{ fontSize: "2rem" }}
+                    className="px-2 text-5xl"
+                  />
+                  <span>Rate & Review Product</span>
+                </Box>
+                
+              }
+            </Grid>
+            {/* {order.order?.orderStatus === "DELIVERED" && (
                 <Box
                   sx={{ color: deepPurple[500] }}
                   onClick={() => navigate(`/account/rate/${item.product.id}`)}
@@ -103,8 +119,7 @@ const OrderDetails = () => {
                   />
                   <span>Rate & Review Product</span>
                 </Box>
-              }
-            </Grid>
+              )} */}
           </Grid>
         ))}
       </Grid>

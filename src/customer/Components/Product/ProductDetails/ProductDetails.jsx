@@ -73,13 +73,22 @@ export default function ProductDetails() {
   const { customersProduct } = useSelector((store) => store);
   const { productId } = useParams();
   const jwt = localStorage.getItem("jwt");
+  const [error, setError] = useState(""); // New error state
   // console.log("param",productId,customersProduct.product)
 
   const handleSetActiveImage = (image) => {
     setActiveImage(image);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Check if a size is selected
+    if (!selectedSize) {
+      setError("Please select a size before adding to cart.");
+      return;
+    }
+
     const data = { productId, size: selectedSize.name };
     dispatch(addItemToCart({ data, jwt }));
     navigate("/cart");
@@ -280,6 +289,11 @@ export default function ProductDetails() {
                     </div>
                   </RadioGroup>
                 </div>
+
+                   {/* Display error message */}
+                {error && (
+                  <p className="text-red-500 text-sm mt-2">{error}</p>
+                )}
 
                 <Button
                   variant="contained"
@@ -492,7 +506,7 @@ export default function ProductDetails() {
 
         {/* similer product */}
         <section className=" pt-10">
-          <h1 className="py-5 text-xl font-bold">Similar Products</h1>
+          <h1 className="py-5 text-xl font-bold">More Products</h1>
           <div className="flex flex-wrap space-y-5">
             {gounsPage1 .map((item) => (
               <HomeProductCard product={item} />
